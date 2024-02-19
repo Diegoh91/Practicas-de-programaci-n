@@ -121,8 +121,8 @@ impresión, sustituyendo por los siguientes:
 -multiplos de 3 y de 5 por la palabra "fizzbuzz"
 """
 
-def fizz_buzz():
-    for i in range(1,101): 
+def fizz_buzz(m,n):
+    for i in range(m,n+1): 
         if i % 3 == 0 and i % 5 ==0:
             print("fizzbuzz")
         elif i % 3 == 0:
@@ -131,7 +131,7 @@ def fizz_buzz():
             print("buzz")
         else:
             print(i)
-fizz_buzz()
+fizz_buzz(1,15)
 
 '''
 Que es lo que hace el programa?
@@ -140,7 +140,7 @@ Que tenemos que saber:
     queremos saber multiplos, esto implica que la divición da como resto 0.
 2)_ el conector "and" une 2 condiciones dentro de un condicional como el if o el elif exigiendo que ambas
     se cumplan en simultaneo
-3)_ para hacer el loop que genere los elementos es necesario usar un for i in range(inicio,fin-1)
+3)_ para hacer el loop que genere los elementos es necesario usar un for i in range(inicio,fin+1)
     de modo que puedas ir verificando las condiciones de cada uno de los elementos creados en ese rango
     a travez de los if y elif
 4)_ como trabajamos con una jerarquia en los comandos, no podríamos poner el doble condicional abajo,
@@ -153,16 +153,37 @@ Que tenemos que saber:
 #con este podemos preguntar en diferentes rangos como se vería el programa
 def fizz_buzz(n,m):
     while n<=m:
-        if n % 3 == 0 and n %5 == 0:
+        if n % 3 == 0 and n % 5 == 0:
             print("fizzbuzz")
         elif n % 3 == 0:
             print("fizz")
-        elif n % 5 ==0:
+        elif n % 5 == 0:
             print("buzz")
         else:
             print(n)
-        n=n+1
+        n = n + 1
 fizz_buzz(1,100)
+'''
+¿Como funciona este otro programa?
+Este prgrama cumple la misma funcion pero con otro metodo, a travez de un while.
+Que tenemos que saber:
+    1)_ la funcion while repetira el programa hasta que se cumpla la condicion del mismo
+    2)_ es importante el orden jerarquico con el que se escriben los condicionales
+Sabiendo esto, el programa hace lo siguiente:
+    1)_ el programa recibe 2 parametros que son los valores entre los que verificara las condiciones
+    3)_ el comado % devuelve el resto de la division entre 2 valores int.
+    2)_ una ves ingresados los parametros, el programa va a ingresar por el while con la condicion 
+        de que n sea menor o igual a m y se volverá a ejecutar aumentando n+1 cada vez que se ejecuta 
+        hasta que n sea igual a m donde el programa se dentendra
+    3)_ en cada ejecucion, el programa primero revisar el condicional if donde verificara en simultaneo las
+        condiciones de: if el resto de la division entre 3 da resto 0 y la division entre 5 da resto 0, lo 
+        que implicaría que el numero es multiplo de 3 y de 5 en simultaneo e imprime "fizzbuzz", si esta 
+        condicion no se cumple pasa a la siguiente linea de codigo donde verifica si el resto de la division
+        entre el numero y 3 da 0, lo que implica que es multiplo solamente del 3 e imprime "fizz", si esta 
+        condicion no se cumple pasa a la siguiente linea de codigo donde verifica si el resto de la division
+        entre el numero y 5 da cero, lo que implicaría que el numero es multiplo de 5 e imprime "buzz"
+        finalmente, si no se cumple niguna condicion, el programa va por el else donde imprime el numero.
+'''
 
 #_____________________________________________________________________________________________________________
 
@@ -193,4 +214,24 @@ is_anagram("RoMa","amor")
 is_anagram("hola","H o L a")
 is_anagram("rng","rlg")
 
+'''
+
+'''
+
+#_____________________________________________________________________________________________________________
+
+#Es un palidromo?:
+"""
+"""
+
+def palidromo(string):
+    string = string.lower().replace(" ","").replace(",","")
+    if string == string[::-1]:
+        print("Es un palidromo")
+    else:
+        print("No es un palidromo")
+palidromo("Neuquen")
+palidromo("quena")
+palidromo("Adan no cede con Eva y Yave no cede con nada")
+palidromo("Red rum, sir, is murder")
 
