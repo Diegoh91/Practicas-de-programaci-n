@@ -18,8 +18,8 @@
 """
 
 #ej 1:
-
 #countDown whit while:
+
 def countDown(n):
     try:          
         while n>=0:     #while n is greater or equal than zero
@@ -27,7 +27,8 @@ def countDown(n):
             n=n-1       #changes n to n-1
     except:
          print("the program only admits int values")
-#countDown()
+countDown()
+
 '''
 ¿Como funcuiona este programa?
 Tenemos que saber que:
@@ -41,6 +42,7 @@ Sabiendo esto el programa hace lo siguiente:
 '''  
 
 #Count Down whitout while:
+
 def otherCountDown(n):
     try:
         if n==0:                      #if n equal to zero
@@ -52,7 +54,8 @@ def otherCountDown(n):
             otherCountDown(n-1)       #execute otherCountDown with n-1
     except:
         print("the program only admits int values")
-#otherCountDown()
+otherCountDown()
+
 '''
 ¿Como funcuiona este programa?
 Tenemos que saber que:
@@ -67,6 +70,7 @@ Sabiendo esto el programa hace lo siguiente:
 ''' 
         
 #Factorial program:
+
 def factorialFunction(n):
     try:
         if n==0:                                                        #if n equal zero
@@ -81,6 +85,30 @@ def factorial(n):
     print(factorialFunction(n))
 factorial(3)
 
+'''
+¿Como funciona el programa?
+Tenemos que saber que:
+    1)_ if verifica condiciones
+    2)_ elif es lo mismo que el if, pero jerarquicamente debajo del if
+    3)_ else es el caso cuando con son verdaderas ni las condiciones del if y el elif
+Sabiendo esto, el programa hace lo siguiente:
+    1)_ if verifica si n es igual a 0 y si es verdadero imprime 1, puesto que el factorial de 0 es 1
+        y termina el programa (no es necesario hacer mas por como es la función factorial)
+    2)_ elif verifica que n no sea negativo, puesto que no tenemos forma de calcular factoriales negativos
+        (o si? eso se lo dejamos a los matemáticos, ellos tambien calculan factoriales de floats)
+    3)_ else si no se cumplen ninguna de las condiciones anteriores, entonces retornaremos el valor de 
+        n multiplicado por el resultado del programa en n-1 y así hasta que n sea = 0 y haga esa 
+        ultima multiplicación por el if.
+Por ejemplo:
+    si n = 3, el factorial sería 3*2*1 y el programa lo calcula de la siguiente forma:
+    1)_ if Verifica que 3 == 0, como esto es falso va a la siguiente linea de código donde verifica
+        si 3 < 0, como esto es falso, pasa a la siguiente linea de código donde retronará el valor
+        3*factorial(2) y ¿cuando vale 3*factorial_function(2)? Bueno, el programa se vuele a ejecutar
+        haciendo nuevamente las verificaciones y determinando que tiene que hacer 3*2*factorial_function(1)
+        y vuelve a ejecutarse devolviendo 3*2*1*factorial_function(0) que por el if da 1 y termina la
+        ejecución del programa, devolviendo la cadena recursiva 3*2*1*0! = 6 (el 0! significa en matematicas
+        "cero factorial", que bueno, es igual a 1) 
+'''
 
 #_____________________________________________________________________________________________________________
 """
@@ -94,7 +122,7 @@ impresión, sustituyendo por los siguientes:
 """
 
 def fizz_buzz():
-    for i in range(1,16): 
+    for i in range(1,101): 
         if i % 3 == 0 and i % 5 ==0:
             print("fizzbuzz")
         elif i % 3 == 0:
@@ -103,7 +131,8 @@ def fizz_buzz():
             print("buzz")
         else:
             print(i)
-#fizz_buzz()
+fizz_buzz()
+
 '''
 Que es lo que hace el programa?
 Que tenemos que saber:
@@ -119,6 +148,7 @@ Que tenemos que saber:
     una de las condiciones por separado, tomaría primero la concición por separado y no llegaría nunca
     al doble condicional.
 '''
+
 #Otra forma de construir un programa que haga lo mismo pero con un while:
 #con este podemos preguntar en diferentes rangos como se vería el programa
 def fizz_buzz(n,m):
@@ -132,7 +162,7 @@ def fizz_buzz(n,m):
         else:
             print(n)
         n=n+1
-#fizz_buzz(1,100)
+fizz_buzz(1,100)
 
 #_____________________________________________________________________________________________________________
 
@@ -147,8 +177,6 @@ def fizz_buzz(n,m):
  * - Dos palabras exactamente iguales no son anagrama.
  */
 """
-
-
 
 def is_anagram(frs_str,sec_str):
     frs_str=frs_str.lower().replace(" ","")
