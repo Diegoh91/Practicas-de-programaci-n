@@ -28,7 +28,17 @@ def countDown(n):
     except:
          print("the program only admits int values")
 #countDown()
-
+'''
+¿Como funcuiona este programa?
+Tenemos que saber que:
+    1)_ el comando while va a repetir el programa hasta que se cumpla la condición puesta luego del mismo
+    2)_ el try y el except solo se pusieron para casos donde no ingresen valores de tipo int (no es relevante)
+Sabiendo esto el programa hace lo siguiente:
+    1)_ Mientras que n sea mayor o igual a 0, va a imprimir n y luego le va a restar 1 antes de repetir el 
+        programa hasta llegar a n=0
+    2)_ el comando try va a intentar ejecutar el comando while, si es que no se puede, por ejemplo si ponemos
+        un string, nos va a retrornar el except.
+'''  
 
 #Count Down whitout while:
 def otherCountDown(n):
@@ -43,7 +53,18 @@ def otherCountDown(n):
     except:
         print("the program only admits int values")
 #otherCountDown()
-        
+'''
+¿Como funcuiona este programa?
+Tenemos que saber que:
+    1)_ if verifica condiciones
+    2)_ elif es lo mismo que el if, pero jerarquicamente debajo del if
+    3)_ else es el caso cuando con son verdaderas ni las condiciones del if y el elif
+Sabiendo esto el programa hace lo siguiente:
+    1)_ if n es igual a 0, entonces imprime n, esto significa que cuando lleguemos a 0, termina el programa.
+    2)_ elif n es menor que cero, no podemos hacer una cuenta regresiva, por lo que nos lo informa.
+    3)_ else si no se cumplen ni el if y el elif, entonces imprime n y vuelve a ejecutar el programa con 
+        el valor de n restado 1 y así hasta que n es igual a 0 y se finaliza el programa con el if inicial.
+''' 
         
 #Factorial program:
 def factorialFunction(n):
@@ -58,7 +79,9 @@ def factorialFunction(n):
         print("the program only admits int values")
 def factorial(n):
     print(factorialFunction(n))
-#factorial()
+factorial(3)
+
+
 #_____________________________________________________________________________________________________________
 """
 El famoso "FIZZ BUZZ"
