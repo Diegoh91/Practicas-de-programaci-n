@@ -203,19 +203,37 @@ def is_anagram(frs_str,sec_str):
     frs_str=frs_str.lower().replace(" ","")
     sec_str=sec_str.lower().replace(" ","")
     if frs_str  == sec_str :
-        return print("Son la misma palabra")
+        return print("They are the same word")
     elif sorted(frs_str) == sorted(sec_str):
-        return print("Es un anagrama")
+        return print("It is an anagram")
     else:
-        print("No es un anagrama")
+        print("It isn't an anagram")
 
-is_anagram("the alias men","Alan Smithee")
-is_anagram("RoMa","amor")
-is_anagram("hola","H o L a")
-is_anagram("rng","rlg")
+#is_anagram("the alias men","Alan Smithee")
+#is_anagram("RoMa","amor")
+#is_anagram("hola","H o L a")
+#is_anagram("rng","rlg")
 
 '''
+This Python function 'is_anagram(frs_str, sec_str)' is designed to determine whether two strings are 
+anagrams of each other. An anagram is a word or phrase formed by rearranging the letters of another 
+word or phrase.
 
+Here's the breakdown of how this function works:
+
+-  'frs_str': Represents the first string input.
+-  'sec_str': Represents the second string input.
+-  'frs_str.lower().replace(" ", "")': This line converts the first string to lowercase using the 'lower()' 
+   method and removes spaces using the 'replace()' method.
+-  'sec_str.lower().replace(" ", "")': This line does the same for the second string.
+After removing spaces and converting both strings to lowercase, the function checks for three conditions:
+
+1.  If the modified versions of the two strings are the same, it means they are identical strings. In this 
+    case, it prints "They are the same word".
+2.  If the sorted characters of both strings are equal, it means they contain the same characters and thus
+    are anagrams of each other. In this case, it prints "It is an anagram".
+3.  If none of the above conditions are met, it means the strings are neither identical nor anagrams of each 
+    other. In this case, it prints "It isn't an anagram".
 '''
 
 #_____________________________________________________________________________________________________________
@@ -230,8 +248,153 @@ def palidromo(string):
         print("Es un palidromo")
     else:
         print("No es un palidromo")
-palidromo("Neuquen")
-palidromo("quena")
-palidromo("Adan no cede con Eva y Yave no cede con nada")
-palidromo("Red rum, sir, is murder")
+#palidromo("Neuquen")
+#palidromo("quena")
+#palidromo("Adan no cede con Eva y Yave no cede con nada")
+#palidromo("Red rum, sir, is murder")
+"""
+This Python function 'palindromo(string)' is designed to determine whether a given string is a palindrome. 
+A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward.
+Here's a breakdown of how this function works:
+-   'string': Represents the input string to check for palindrome.
+-   'string.lower().replace(" ", "").replace(",", "")replace("/","")': This line converts the input string to 
+    lowercase using the 'lower()' method and removes spaces, slash and commas using the 'replace()' method.
+After removing spaces and commas and converting the string to lowercase, the function checks if the modified 
+string is equal to its reverse:
+1.  'string[::-1]': This syntax '[::-1]' is used to reverse the string. It creates a new string with characters 
+    in reverse order.
+2.  If the original string is equal to its reverse, it means the string reads the same forward and backward, 
+    making it a palindrome. In this case, it prints "Es un palindromo".
+3.  If the original string is not equal to its reverse, it means the string is not the same forward and 
+    backward, indicating it is not a palindrome. In this case, it prints "No es un palindromo".
+"""
+#_____________________________________________________________________________________________________________
+
+#Fibonacci
+"""
+#3
+LA SUCESIÓN DE FIBONACCI
+/*
+ * Escribe un programa que imprima los 50 primeros números de la sucesión
+ * de Fibonacci empezando en 0.
+ * - La serie Fibonacci se compone por una sucesión de números en
+ *   la que el siguiente siempre es la suma de los dos anteriores.
+ *   0, 1, 1, 2, 3, 5, 8, 13...
+ */
+"""
+
+def fibonacci():
+   prev = 0
+   next = 1
+   for i in range(0,10):
+       print(prev)
+       fib = prev + next
+       prev = next
+       next = fib
+fibonacci()
+
+def fibonacci(n):
+    prev = 0
+    next = 1
+    while prev<n:
+        print(prev)
+        fib = prev+next
+        prev = next
+        next = fib
+fibonacci(10)
+
+#forma compacta
+def fibonacci(n):
+    prev , next = 0 , 1
+    while prev<n:
+        print(prev)
+        prev , next = next , prev + next
+#fibonacci(10)
+
+#_____________________________________________________________________________________________________________
+
+"""
+¿ES UN NÚMERO PRIMO?
+/*
+ * Escribe un programa que se encargue de comprobar si un número es o no primo.
+ * Hecho esto, imprime los números primos entre 1 y 100.
+ * Un número primo es un número natural positivo mayor que 1 que solo es divisible entre si mismo y 1.
+ */
+"""
+
+def is_prime_boolean(n):
+        for i in range(2,n):
+            if n % i == 0:
+                return False
+        return True 
+#print(is_prime_boolean(2))
+"""
+This function "is_prime_boolean" takes a single parameter "n", which presumably represents an integer. 
+Its purpose is to determine whether "n" is a prime number or not. Here's how it works:
+1.  The function starts by iterating through a range of numbers from 2 to "n-1" using a for loop. This 
+    loop is used to check if "n" is divisible by any number other than 1 and itself.
+2.  Inside the loop, for each "i" in the range, it checks if "n" is evenly divisible by "i" ("n % i == 0"). 
+    If it is, it means "n" is divisible by a number other than 1 and itself, which means it's not a prime 
+    number, and the function returns "False".
+3.  If the loop completes without finding any number that "n" is divisible by, the function returns
+    "True", indicating that "n" is indeed a prime number since it's only divisible by 1 and itself.
+
+In summary, this function takes an integer "n" as input and returns "True" if "n" is a prime 
+number, and "False" otherwise. It uses a simple algorithm of checking divisibility by all numbers 
+from 2 to "n-1". If "n" is divisible by any of these numbers, it's not a prime, otherwise, it's prime.
+"""
+
+def is_prime(n):
+    if n <= 1:
+        print(f"{n} no existen primos menores a 2")
+    elif is_prime_boolean(n) == True:
+        print(f"{n} es primo")
+    else:
+        print(f"{n} no es primo")
+
+def prime_before(m):
+    n = 2
+    while n <= m:
+        if is_prime_boolean(n) == True:
+            print(n)
+        else:
+            pass
+        n = n + 1
+#prime_before(100)
+
+def frst_n_primes(m):
+        n = 2
+        i = 1
+        while i <= m:
+            if is_prime_boolean(n) == True:
+                print(n)
+                i = i + 1
+                n = n + 1
+            else:
+                n = n + 1
+#frst_n_primes(5)
+"""
+This Python function "frst_n_primes(m)" is designed to print the first "m" prime numbers. Let's break 
+down how it works:
+
+1.  "n = 2": This line initializes a variable "n" to 2. "n" will represent the numbers that we will check 
+    for primality starting from 2.
+
+2.  "i = 1": This line initializes a variable "i" to 1. "i" will keep track of the number of prime numbers 
+    found so far.
+3.  "while i <= m:": This line starts a while loop that continues as long as the count of prime numbers 
+    found ("i") is less than or equal to the total number of primes required ("m").
+4.  Inside the loop, "if is_prime_boolean(n) == True:": This line checks if the current value of "n" is a 
+    prime number by calling the "is_prime_boolean()" function. If it returns "True", it means "n" is prime.
+5.  If "n" is prime, "print(n)": This line prints the prime number.
+6.  "i = i + 1": This line increments the count of prime numbers found ("i") by 1.
+7.  "n = n + 1": This line increments "n" by 1, so the loop will move on to the next number for 
+    checking primality.
+8.  If the current value of "n" is not prime, it simply increments "n" by 1 and moves to the next number to check.
+9.  Once the loop completes ("i" reaches "m"), the function ends, having printed the first "m" prime numbers.
+
+Overall, this function effectively finds and prints the first "m" prime numbers by iteratively checking each 
+number starting from 2 until it has found "m" primes.
+"""
+
 
