@@ -209,10 +209,10 @@ def is_anagram(frs_str,sec_str):
     else:
         print("It isn't an anagram")
 
-#is_anagram("the alias men","Alan Smithee")
-#is_anagram("RoMa","amor")
-#is_anagram("hola","H o L a")
-#is_anagram("rng","rlg")
+is_anagram("the alias men","Alan Smithee")
+is_anagram("RoMa","amor")
+is_anagram("hola","H o L a")
+is_anagram("rng","rlg")
 
 '''
 This Python function 'is_anagram(frs_str, sec_str)' is designed to determine whether two strings are 
@@ -248,10 +248,10 @@ def palidromo(string):
         print("Es un palidromo")
     else:
         print("No es un palidromo")
-#palidromo("Neuquen")
-#palidromo("quena")
-#palidromo("Adan no cede con Eva y Yave no cede con nada")
-#palidromo("Red rum, sir, is murder")
+palidromo("Neuquen")
+palidromo("quena")
+palidromo("Adan no cede con Eva y Yave no cede con nada")
+palidromo("Red rum, sir, is murder")
 """
 This Python function 'palindromo(string)' is designed to determine whether a given string is a palindrome. 
 A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward.
@@ -309,7 +309,7 @@ def fibonacci(n):
     while prev<n:
         print(prev)
         prev , next = next , prev + next
-#fibonacci(10)
+fibonacci(10)
 
 #_____________________________________________________________________________________________________________
 
@@ -327,7 +327,7 @@ def is_prime_boolean(n):
             if n % i == 0:
                 return False
         return True 
-#print(is_prime_boolean(2))
+print(is_prime_boolean(2))
 """
 This function "is_prime_boolean" takes a single parameter "n", which presumably represents an integer. 
 Its purpose is to determine whether "n" is a prime number or not. Here's how it works:
@@ -360,7 +360,7 @@ def prime_before(m):
         else:
             pass
         n = n + 1
-#prime_before(100)
+prime_before(100)
 
 def frst_n_primes(m):
         n = 2
@@ -372,7 +372,7 @@ def frst_n_primes(m):
                 n = n + 1
             else:
                 n = n + 1
-#frst_n_primes(5)
+frst_n_primes(25)
 """
 This Python function "frst_n_primes(m)" is designed to print the first "m" prime numbers. Let's break 
 down how it works:
